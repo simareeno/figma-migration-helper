@@ -2,6 +2,7 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 
 import {ThemeProvider} from '@gravity-ui/uikit';
+import App from './App';
 
 import '@gravity-ui/uikit/styles/styles.css';
 
@@ -10,20 +11,15 @@ interface IState {
     data: string;
 }
 
-class App extends React.Component<{}, IState> {
+class Application extends React.Component<{}, IState> {
     state: IState = {
         step: 'initial',
         data: '',
     };
 
     render() {
-        return (
-            <div className="Page">
-                123
-            </div>
-            
-        );
+        return <div className="Page"><App /></div>;
     }
 }
 
-ReactDOM.render(<ThemeProvider theme="light"><App /></ThemeProvider>, document.getElementById('page'));
+ReactDOM.render(<ThemeProvider theme="light"><Application /></ThemeProvider>, document.getElementById('page'));
